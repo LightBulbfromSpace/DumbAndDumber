@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" minHeight="200.0" minWidth="290.0" spacing="20.0" style="-fx-background-color: #1004ba;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.GameProcessController">
+    <children>
+        <Label fx:id="questionLabel" prefWidth="220.0" style="-fx-padding: 10; -fx-background-color: #0f03ad; -fx-background-radius: 10;" text="Question Placeholder" textAlignment="CENTER" textFill="#dddddd" />
+      <CheckBox fx:id="answerLabel1" lineSpacing="5.0" mnemonicParsing="false" prefWidth="220.0" style="-fx-background-color: #0d0399; -fx-label-padding: 7; -fx-padding: 10; -fx-background-radius: 10;" text="Answer 1" textFill="#dddddd" wrapText="true" />
+      <CheckBox fx:id="answerLabel2" lineSpacing="5.0" mnemonicParsing="false" prefWidth="220.0" style="-fx-background-color: #0d0399; -fx-label-padding: 7; -fx-padding: 10; -fx-background-radius: 10;" text="Answer 2" textFill="#dddddd" wrapText="true" />
+      <CheckBox fx:id="answerLabel3" lineSpacing="5.0" mnemonicParsing="false" prefWidth="220.0" style="-fx-background-color: #0d0399; -fx-label-padding: 7; -fx-padding: 10; -fx-background-radius: 10;" text="Answer 3" textFill="#dddddd" wrapText="true" />
+      <CheckBox fx:id="answerLabel4" lineSpacing="5.0" mnemonicParsing="false" prefWidth="220.0" style="-fx-background-color: #0d0399; -fx-label-padding: 7; -fx-padding: 10; -fx-background-radius: 10;" text="Answer4" textFill="#dddddd" wrapText="true" />
+      <Button fx:id="answerButton" mnemonicParsing="false" onAction="#onAnswerClick" onMouseClicked="#onAnswerClick" prefHeight="26.0" prefWidth="125.0" style="-fx-background-color: #8682ba;" text="Answer" textFill="#dddddd" />
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>
