@@ -1,3 +1,5 @@
+USE dumbAndDumberGame;
+
 INSERT INTO Questions(id, question) VALUES
     (1, "Куда сел медведь?"),
     (2, "Купил мужик шляпу, а она ему ..."),
@@ -22,8 +24,8 @@ INSERT INTO Answers(id, question_id, answer) VALUES
     (15, 4, 'Всё ясно'),
     (16, 4, 'Килобайт');
 
-INSERT INTO CorrectAnswers (question_id, correct_answer) VALUES
-    (1, 6),
-    (2, 11),
-    (3, 13),
+INSERT INTO CorrectAnswers (question_id, answer_id) VALUES
+    (1, 1),
+    (2, 6),
+    (3, 11),
     (4, 16);
