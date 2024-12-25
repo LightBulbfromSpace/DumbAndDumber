@@ -1,10 +1,6 @@
 package com.example;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
-import com.example.entities.Player;
-import com.example.entities.QuizQuestion;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,13 +14,18 @@ import javafx.stage.Stage;
 public class App extends Application {
 
     private static Scene scene;
+    final private static AppStore store = new AppStore();
 
-    private ArrayList<QuizQuestion> questions;
-    private Player player;
+    public static AppStore getStore() {
+        return App.store;
+    }
 
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("startScreen"), 640, 480);
+
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+
         stage.setScene(scene);
         stage.show();
     }
