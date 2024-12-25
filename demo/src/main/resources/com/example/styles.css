@@ -1,0 +1,26 @@
+.button {
+    -fx-background-color: #8682ba; /* Background color */
+    -fx-text-fill: #dddddd;        /* Text color */
+    -fx-text-alignment: justify;  /* Text alignment */
+    -fx-pref-height: 26px;        /* Preferred height */
+    -fx-pref-width: 150px;
+    /* -fx-font-size: 14px; */
+    -fx-font-weight: bold;        /* Optional: Bold text for emphasis */
+    -fx-border-color: #dddddd;   /* Optional: Border color */
+    -fx-border-width: 1px;       /* Optional: Border width */
+    -fx-border-radius: 5px;      /* Optional: Rounded corners for the border */
+    -fx-background-radius: 5px;  /* Optional: Rounded corners for the button */
+}
+
+.answer {
+    -fx-background-color: #0d0399;
+    -fx-label-padding: 7;
+    -fx-padding: 10;
+    -fx-background-radius: 10;
+}
+
+.question {
+    -fx-background-color: #0f03ad;
+    -fx-padding: 10;
+    -fx-background-radius: 10;
+}
