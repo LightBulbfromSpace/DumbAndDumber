@@ -3,14 +3,24 @@ package com.example.entities;
 import java.util.ArrayList;
 
 public class QuizQuestion {
+    private Integer id;
     private String question;
-    private ArrayList<String> answers;
-    private Integer rightQuestionId;
+    private ArrayList<Answer> answers;
+    private Integer rightAnswerId;
 
-    public QuizQuestion(String question, ArrayList<String> answers, Integer rightQuestionId) {
+    public QuizQuestion(Integer id, String question, ArrayList<Answer> answers, Integer rightAnswerId) {
+        this.id = id;
         this.question = question;
         this.answers = answers;
-        this.rightQuestionId = rightQuestionId;
+        this.rightAnswerId = rightAnswerId;
+    }
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getQuestion() {
@@ -21,19 +31,19 @@ public class QuizQuestion {
         this.question = question;
     }
 
-    public ArrayList<String> getAnswers() {
+    public ArrayList<Answer> getAnswers() {
         return this.answers;
     }
 
-    public void setAnswers(ArrayList<String> answers) {
+    public void setAnswers(ArrayList<Answer> answers) {
         this.answers = answers;
     }
 
-    public Integer getRightQuestionId() {
-        return this.rightQuestionId;
+    public Integer getRightAnswerId() {
+        return this.rightAnswerId;
     }
 
-    public void setRightQuestionId(Integer rightQuestionId) {
-        this.rightQuestionId = rightQuestionId;
-    }    
+    public void setRightAnswerId(Integer rightAnswerId) {
+        this.rightAnswerId = rightAnswerId;
+    }
 }
