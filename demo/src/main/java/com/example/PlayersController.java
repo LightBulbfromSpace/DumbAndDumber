@@ -122,7 +122,7 @@ public class PlayersController implements Initializable {
         } else {
             String value = playerNameTextField.getText();
             if (value.isEmpty()) {
-                showErrorDialog("Error", "Name can't be empty", "");
+                ErrorDialog.showErrorDialog("Error", "Name can't be empty", "");
 
                 return;
             }
@@ -163,15 +163,6 @@ public class PlayersController implements Initializable {
         addUserButton.setText("Add User");
 
         show(deleteUserButton, 200);
-    }
-
-    private void showErrorDialog(String title, String header, String content) {
-        Alert alert = new Alert(AlertType.ERROR);
-        alert.setTitle(title);
-        alert.setHeaderText(header);
-        alert.setContentText(content);
-
-        alert.showAndWait();
     }
 
     private <T extends javafx.scene.layout.Region> void hide(T item) {
