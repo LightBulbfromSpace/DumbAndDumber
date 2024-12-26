@@ -27,6 +27,8 @@ public class GameProcessController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        App.getStore().setSessionScore(0);
+
         if (questions.isEmpty()) {
             try {
                 App.setRoot("final");
