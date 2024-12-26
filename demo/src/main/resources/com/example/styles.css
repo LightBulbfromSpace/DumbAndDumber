@@ -17,10 +17,14 @@
     -fx-label-padding: 7;
     -fx-padding: 10;
     -fx-background-radius: 10;
+    -fx-text-fill: #dddddd;
+    -fx-min-width: 320px;
 }
 
 .question {
     -fx-background-color: #0f03ad;
     -fx-padding: 10;
     -fx-background-radius: 10;
+    -fx-text-fill: #dddddd;
+    -fx-min-width: 320px;
 }
