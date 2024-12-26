@@ -1,5 +1,3 @@
-USE dumbAndDumberGame;
-
 INSERT INTO Questions(id, question) VALUES
     (1, "Куда сел медведь?"),
     (2, "Купил мужик шляпу, а она ему ..."),

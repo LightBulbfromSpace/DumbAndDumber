@@ -13,7 +13,7 @@ public class PlayerLoader extends EntityLoader<Player> {
     @Override
     public Player loadById(int id) {
         try {
-            PreparedStatement st = conn.prepareStatement("SELECT x.rating, x.nickname, x.score FROM (SELECT p.id, p.nickname, p.score, @rownum := @rownum + 1 AS rating FROM Players as p JOIN (SELECT @rownum := 0) r ORDER BY p.score DESC) x WHERE x.id = ?");
+            PreparedStatement st = conn.prepareStatement("WITH RankedPlayers AS (SELECT p.id, p.nickname, p.score, ROW_NUMBER() OVER (ORDER BY p.score DESC) AS rating FROM Players p) SELECT x.rating, x.nickname, x.score FROM RankedPlayers x WHERE x.id = ?");
             st.setInt(1, id);
             ResultSet rs = st.executeQuery();
 

@@ -1,39 +1,28 @@
-CREATE DATABASE IF NOT EXISTS dumbAndDumberGame;
+PRAGMA foreign_keys = ON;
+PRAGMA encoding = "UTF-16";
 
-USE dumbAndDumberGame;
+CREATE TABLE Players (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nickname TEXT NOT NULL,
+    score INTEGER DEFAULT 0
+);
 
-CREATE USER IF NOT EXISTS 'dumbUser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass';
-
-GRANT ALL PRIVILEGES ON dumbAndDumberGame.* TO 'dumbUser'@'localhost';
-
-CREATE TABLE IF NOT EXISTS Questions (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE Questions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     question TEXT NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS Answers (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    question_id INT NOT NULL,
+CREATE TABLE Answers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    question_id INTEGER NOT NULL,
     answer TEXT NOT NULL,
-    FOREIGN KEY (question_id)
-      REFERENCES Questions(id)
-      ON UPDATE CASCADE ON DELETE RESTRICT
+    FOREIGN KEY (question_id) REFERENCES Questions(id) ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS CorrectAnswers (
-    answer_id INT,
-    question_id INT,
-    PRIMARY KEY (answer_id, question_id),
-    FOREIGN KEY (question_id)
-      REFERENCES Questions(id)
-      ON UPDATE CASCADE ON DELETE RESTRICT,
-    FOREIGN KEY (answer_id)
-      REFERENCES Answers(id)
-      ON UPDATE CASCADE ON DELETE RESTRICT
-);
-
-CREATE TABLE IF NOT EXISTS Players (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nickname VARCHAR(50) NOT NULL,
-    score INT NOT NULL DEFAULT 0
+CREATE TABLE CorrectAnswers (
+    question_id INTEGER NOT NULL,
+    answer_id INTEGER NOT NULL,
+    PRIMARY KEY (question_id, answer_id),
+    FOREIGN KEY (question_id) REFERENCES Questions(id) ON DELETE CASCADE,
+    FOREIGN KEY (answer_id) REFERENCES Answers(id) ON DELETE CASCADE
 );
