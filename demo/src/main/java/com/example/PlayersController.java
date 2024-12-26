@@ -56,7 +56,7 @@ public class PlayersController implements Initializable {
         ratingCol.setCellValueFactory(new PropertyValueFactory<>("rating"));
         TableColumn<Player, String> nameCol = new TableColumn<>("Name");
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        TableColumn<Player, String> scoreCol = new TableColumn<>("Score");
+        TableColumn<Player, String> scoreCol = new TableColumn<>("Best Score");
         scoreCol.setCellValueFactory(new PropertyValueFactory<>("score"));
 
 
