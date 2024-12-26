@@ -51,4 +51,20 @@ public class PlayerRepository extends Repository<Player> {
         }
         
     }
+
+    public void update(Player entity) {
+        try {
+            PreparedStatement st = conn.prepareStatement("UPDATE Players SET nickname = ?, score = ? WHERE id = ?");
+            st.setString(1, entity.getName());
+            st.setInt(2, entity.getScore());
+            st.setInt(3, entity.getId());
+
+            st.executeUpdate();
+
+            st.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+    }
 }
