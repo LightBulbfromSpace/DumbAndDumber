@@ -1,16 +1,10 @@
 package com.example;
 
-import java.util.ArrayList;
 import com.example.entities.Player;
-import com.example.entities.QuizQuestion;
 
 public class AppStore {
     private Player currentPlayer;
-    private ArrayList<QuizQuestion> questions;
-
-    public AppStore() {
-        questions = new ArrayList<>();
-    }
+    private Integer sessionScore = 0;
 
     public Player getCurrentPlayer() {
         return currentPlayer;
@@ -20,11 +14,11 @@ public class AppStore {
         this.currentPlayer = currentPlayer;
     }
 
-    public ArrayList<QuizQuestion> getQuestions() {
-        return questions;
+    public Integer getSessionScore() {
+        return this.sessionScore;
     }
 
-    public void setQuestions(ArrayList<QuizQuestion> questions) {
-        this.questions = questions;
+    public void setSessionScore(Integer sessionScore) {
+        this.sessionScore = sessionScore;
     }
 }

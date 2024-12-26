@@ -7,12 +7,10 @@ import java.util.ResourceBundle;
 
 import com.example.db.quizQuestion.QuizQuestionLoader;
 import com.example.entities.Answer;
-import com.example.entities.Player;
 import com.example.entities.QuizQuestion;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
@@ -26,7 +24,6 @@ public class GameProcessController implements Initializable {
 
     @FXML private Label questionLabel;
     @FXML private VBox answersContainer;
-    @FXML private Button answerButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -52,6 +49,14 @@ public class GameProcessController implements Initializable {
         for (Answer answer : answers) {
             CheckBox checkBox = new CheckBox(answer.getText());
             checkBox.setId(answer.getId().toString());
+
+            checkBox.setOnAction(event -> {
+                for (CheckBox cb : this.currentCheckBoxes) {
+                    if (cb != checkBox) {
+                        cb.setSelected(false);
+                    }
+                }
+            });
 
             currentCheckBoxes.add(checkBox);
 
@@ -80,12 +85,13 @@ public class GameProcessController implements Initializable {
             }
 
             if (checkboxAnswerId.equals(rightAnswerId.toString())) {
-                Player player = App.getStore().getCurrentPlayer();
+                AppStore store = App.getStore();
 
-                player.setScore(player.getScore() + 1);
+                store.setSessionScore(
+                    store.getSessionScore() + 1
+                );
             }
         }
-
 
         if (currentQuestionIndex >= questions.size() - 1) {
             App.setRoot("final");
@@ -94,6 +100,11 @@ public class GameProcessController implements Initializable {
         }
 
         setNextQuestion();
+    }
+
+    @FXML
+    private void onToStartScreenClicked() throws IOException {
+        App.setRoot("startScreen");
     }
 
     private void setNextQuestion() {

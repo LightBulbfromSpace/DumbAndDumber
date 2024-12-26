@@ -17,9 +17,14 @@ public class FinalController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Integer score = App.getStore().getSessionScore();
         Player currentPlayer = App.getStore().getCurrentPlayer();
 
-        scoreLabel.setText(currentPlayer.getScore().toString());
+        scoreLabel.setText(score.toString());
+
+        if (score > currentPlayer.getScore()) {
+            currentPlayer.setScore(score);
+        }
 
         new PlayerRepository().update(currentPlayer);
     }
