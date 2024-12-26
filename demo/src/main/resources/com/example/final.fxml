@@ -18,7 +18,7 @@
             <Label fx:id="scoreLabel" text="0" textAlignment="CENTER" textFill="#dddddd" />
          </children>
       </HBox>
-        <Button fx:id="toStartButton" mnemonicParsing="false" onAction="#onToStartClick" onMouseClicked="#onAnswerClick" prefHeight="26.0" prefWidth="125.0" stylesheets="@styles.css" text="To Start" textFill="#dddddd" />
+        <Button fx:id="toStartButton" mnemonicParsing="false" onAction="#onToStartClick" prefHeight="26.0" stylesheets="@styles.css" text="To Start" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
