@@ -28,3 +28,7 @@
     -fx-text-fill: #dddddd;
     -fx-min-width: 320px;
 }
+
+.label {
+    -fx-text-fill: #dddddd;
+}
