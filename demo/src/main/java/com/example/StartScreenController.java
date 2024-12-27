@@ -24,6 +24,6 @@ public class StartScreenController {
 
     @FXML
     private void loadQuestions() throws IOException {
-        App.setRoot("loadQuestions");
+        App.setRoot("editQuestions");
     }
 }

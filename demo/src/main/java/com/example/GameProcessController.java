@@ -16,8 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 public class GameProcessController implements Initializable {
-    final private QuizQuestionLoader entityLoader = new QuizQuestionLoader();
-    final private ArrayList<QuizQuestion> questions = entityLoader.loadAll();
+    final private ArrayList<QuizQuestion> questions = new QuizQuestionLoader().loadAll();
 
     private Integer currentQuestionIndex = -1;
     private ArrayList<CheckBox> currentCheckBoxes = new ArrayList<>();
