@@ -1,5 +1,5 @@
 PRAGMA foreign_keys = ON;
-PRAGMA encoding = "UTF-16";
+PRAGMA encoding = "UTF-8";
 
 CREATE TABLE Players (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

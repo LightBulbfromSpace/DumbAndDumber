@@ -7,7 +7,7 @@ INSERT INTO Questions(id, question) VALUES
 INSERT INTO Answers(id, question_id, answer) VALUES
     (1, 1, 'В машину'),
     (2, 1, 'В тюрьму'),
-    (3, 1, 'На иглу одорения'),
+    (3, 1, 'На иглу одобрения'),
     (4, 1, 'Медведи не умеют садиться'),
     (5, 2, 'не подошла'),
     (6, 2, 'как раз'),
